@@ -1,0 +1,115 @@
+<div class="table-responsive">
+<div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="alert alert-success col-md-6 text-center" role="alert">
+        Puedes Ingresar Valores Manualmente o subir un archivo de Excel<br>
+        <a class="text-primary" href="" data-toggle="modal" data-target="#modalImagen">¿Qué debe contener el archivo Excel
+          a importar?</a>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="input-group mb-4">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile02" (change)="onFileChange($event)"
+              accept=".xlsx">
+            <label class="custom-file-label" for="inputGroupFile02">Subir Archivo...</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Buscador....">
+          </div>
+        </div>
+      </div>
+    <div class="row mt-2" *ngIf="asignado.length > 0">
+      <div class="col-md-12">
+        <div class="row m-2">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" class="text-center">ORGANISMO</th>
+                <th scope="col" class="text-center">EXTENCION</th>
+                <th scope="col" class="text-center">NOMBRE DEL PROYECTO</th>
+                <th scope="col" class="text-center">NOMBRE DE LA ACTIVIDAD</th>
+                <th scope="col" class="text-center">PARTIDA</th>
+                <th scope="col" class="text-center">ASIGNADO</th>
+                <th scope="col" class="text-center">MODIFICADO</th>
+                <th scope="col" class="text-center">VIGENTE</th>
+                <th scope="col" class="text-center">CERTIFICADO</th>
+                <th scope="col" class="text-center">COMPROMETIDO</th>
+                <th scope="col" class="text-center">DEVENGADO</th>
+                <th scope="col" class="text-center">PAGADO</th>
+                <th scope="col" class="text-center">SALDO POR COMPROMETER</th>
+                <th scope="col" class="text-center">SALDO POR DEVENGAR</th>
+                <th scope="col" class="text-center">SALDO POR PAGAR</th>
+                <th scope="col" class="text-center">% EJECUCION</th>
+                <th scope="col" class="text-center">CORRELATIVO</th>
+                <th scope="col" class="text-center">EOD</th>
+                <th scope="col" class="text-center">CUP</th>
+                <th scope="col" class="text-center">CODIGO ESTRUCTURA PRESUPUESTARIA</th>
+                <th scope="col" class="text-center">CODIGO ITEM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of asignado | paginate: { itemsPerPage: 10, currentPage: pageActual}; let i = index as i">
+                <th scope="row" *ngIf="i<asignado.length-1">{{ i + 1 }}</th>
+                <th scope="row" *ngIf="asignado.length-1==i" class="bg-secondary text-white"> Total </th>
+                <td class="text-center" style="font-size: x-small; ">{{ item.Organismos}}</td>
+                <td class="text-center" style="font-size: x-small; ">{{ item.Extension}}</td>
+                <td class="text-center" style="font-size: x-small; ">{{ item.NDP}}</td>
+                <td class="text-center" style="font-size: x-small; ">{{ item.NDLA}}</td>
+                <td class="text-center" style="font-size: x-small; ">{{ item.Partida}}</td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;"class="form-control" [value] = 'item.Asignado' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;"class="form-control" [value] = 'item.Modificado' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Vigente' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Certificado' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Comprometido' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Devengado' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Pagado' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.SaldoPorComprometer' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.SaldoPorDevengar' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.SaldoPorPagar' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Ejecucion' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Correlativo' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.EOD' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.CUP' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.CodigoEstructuraPresupuestaria' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.CodigoItem' type="text"></td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Asignado}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Modificado}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Vigente}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Certificado}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Comprometido}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Devengado}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Pagado}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].SaldoPorComprometer}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].SaldoPorDevengar}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].SaldoPorPagar}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Ejecucion}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Correlativo}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].EOD}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].CUP}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].CodigoEstructuraPresupuestaria}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].CodigoItem}}</td>
+                <td class="text-center"></td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block">Guardar</button>
+
+      </div>
+      
+      <div>
+  <div>
+  
+  </div>
