@@ -248,16 +248,20 @@
 }
 
 .bg-danger {
-  color: #000000 !important; 
+  color: #c73f3f !important;
   background-color: rgb(245, 102, 102);
 }
 .bg-warning {
-  color: #f7e438 !important;
-  background-color: rgb(247, 244, 82); }
+  color: #000000 !important;
+  background-color: rgb(247, 244, 82);
+}
 .bg-success {
-  color: #0bf072 !important; 
-  background-color: rgb(44, 241, 120);}
+  color: #000000 !important;
+  background-color: rgb(44, 241, 120);
+}
 
-
-
-  
+.resultados{
+  color: rgb(77, 45, 5);
+  border-color: rgb(0, 0, 0);
+  border-width: 3px;
+}
