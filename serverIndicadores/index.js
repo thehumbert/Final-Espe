@@ -57,6 +57,7 @@ app.use( '/api/iasa', require('./routes/iasas') );
 app.use( '/api/santoDomingo', require('./routes/santoDomingos') );
 app.use( '/api/viceInvestigacion', require('./routes/viceInvestigacions') );
 
+app.use( '/api/viceDocencia', require('./routes/viceDocencias') );
 app.use( '/api/viceAdministrativo', require('./routes/viceAdministrativos') );
 app.use( '/api/gastoCorriente', require('./routes/gastoCorrientes') );
 
@@ -66,7 +67,9 @@ app.use('/api', userRoutesdocumentos)
 app.use('/api/latacunga', require('./routes/latacungas'));
 //Unidades Rectorado Rura
 app.use('/api/unidadesRectorado', require('./routes/unidadesRectorados'));
-//Santo R
+//Vag Ruta
+app.use( '/api/vag', require('./routes/vags') );
+
 
 
 

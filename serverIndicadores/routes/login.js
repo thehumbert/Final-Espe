@@ -143,17 +143,19 @@ function obtenerMenu(ROLE) {
         menu[0].submenu.unshift(   
             { titulo : 'REFORMAS PRESUPUESTARIAS', url: '/dashboard/reformas' },
             { titulo : 'GASTO CORRIENTE', url: '/dashboard/gasto-corriente' },
-            { titulo : 'GASTO INVERSION', url: '/dashboard/gasto-inversion' },
+            { titulo : 'GASTO INVERSIÓN', url: '/dashboard/gasto-inversion' },
             { titulo : 'RESUMEN', url: '/dashboard/resumen-pug-informe' },
             { titulo : 'IASA', url: '/dashboard/iasa' },
             { titulo : 'LATACUNGA', url: '/dashboard/latacunga' },
             { titulo : 'SANTO DOMINGO', url: '/dashboard/santo-domingo' },
             { titulo : 'UNIDADES RECTORADO', url: '/dashboard/unidades-rectorado' },
             { titulo : 'VICE ADMINISTRATIVO', url: '/dashboard/vice-administrativo' },
-            { titulo : 'VICE INVESTIGACION', url: '/dashboard/vice-investigacion' },
-            { titulo : 'REFORMAS ', url: '/dashboard/reformasRequirente' }
+            { titulo : 'VICE DOCENCIA ', url: '/dashboard/vice-docencia' },
+            { titulo : 'VICE INVESTIGACIÓN', url: '/dashboard/vice-investigacion' },
+            { titulo : 'REFORMAS ', url: '/dashboard/reformasRequirente' },
+            { titulo : 'VAG ', url: '/dashboard/vag' }
         );
-     
+
     }
 
     if (ROLE === 'VICERECTOR_ROLE') {

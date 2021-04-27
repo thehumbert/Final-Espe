@@ -23,6 +23,8 @@ import { ReformasRequirenteComponent } from './reformasGenerales/reformas-requir
 import { VerReformasPGComponent } from './reformasGenerales/ver-reformas-pg/ver-reformas-pg.component';
 import { IasaComponent } from './seguimientoEvaluaciones/iasa/iasa.component';
 import { LatacungaComponent } from './seguimientoEvaluaciones/latacunga/latacunga.component';
+import { VagComponent } from './seguimientoEvaluaciones/vag/vag.component';
+import { ViceDocenciaComponent } from './seguimientoEvaluaciones/vice-docencia/vice-docencia.component';
 import { SantoDomingoComponent } from './seguimientoEvaluaciones/santo-domingo/santo-domingo.component';
 import { UnidadesRectoradoComponent } from './seguimientoEvaluaciones/unidades-rectorado/unidades-rectorado.component';
 import { ViceAdministrativoComponent } from './seguimientoEvaluaciones/vice-administrativo/vice-administrativo.component';
@@ -65,10 +67,11 @@ const routes: Routes = [
 
         {path:'latacunga', component:LatacungaComponent, data:{ titulo: 'Latacunga'},canActivate:[AdminGuard],},
         {path:'santo-domingo', component:SantoDomingoComponent, data:{ titulo: 'Santo Domingo'},canActivate:[AdminGuard],},
-        {path:'unidades-rectorado', component:UnidadesRectoradoComponent, data:{ titulo: 'Unidades Resctorado'},canActivate:[AdminGuard],},
+        {path:'unidades-rectorado', component:UnidadesRectoradoComponent, data:{ titulo: 'Unidades Rectorado'},canActivate:[AdminGuard],},
         {path:'vice-administrativo', component:ViceAdministrativoComponent, data:{ titulo: 'Vice administrativo'},canActivate:[AdminGuard],},
-        {path:'vice-investigacion', component:ViceInvestigacionComponent, data:{ titulo: 'Vice investigacion'},canActivate:[AdminGuard],},
-
+        {path:'vice-investigacion', component:ViceInvestigacionComponent, data:{ titulo: 'Vice Investigación'},canActivate:[AdminGuard],},
+        {path:'vag', component:VagComponent, data:{ titulo: 'Vag'},canActivate:[AdminGuard],},
+        {path:'vice-docencia', component:ViceDocenciaComponent, data:{ titulo: 'Vice Docencia'},canActivate:[AdminGuard],},
 
         {path:'reformasRequirente', component: ReformasRequirenteComponent, data:{ titulo: 'Reformas'},canActivate:[AdminGuard],},
         {path:'reformasRequirentes', component: IdreformasRequirenteComponent, data:{ titulo: 'Reforma Presupuestaria'},canActivate:[AdminGuard]},

@@ -39,6 +39,8 @@ import { ChartsModule } from 'ng2-charts';
 import { UnidadesRectoradoComponent } from './seguimientoEvaluaciones/unidades-rectorado/unidades-rectorado.component';
 import { GastoCorrienteComponent } from './seguimientoEvaluaciones/gasto-corriente/gasto-corriente.component';
 import { GastoInversionComponent } from './seguimientoEvaluaciones/gasto-inversion/gasto-inversion.component';
+import { VagComponent } from './seguimientoEvaluaciones/vag/vag.component';
+import { ViceDocenciaComponent } from './seguimientoEvaluaciones/vice-docencia/vice-docencia.component';
 
 
 
@@ -70,7 +72,9 @@ import { GastoInversionComponent } from './seguimientoEvaluaciones/gasto-inversi
     ResumenPugInformeComponent,
     UnidadesRectoradoComponent,
     GastoCorrienteComponent,
-    GastoInversionComponent
+    GastoInversionComponent,
+    VagComponent,
+    ViceDocenciaComponent
   ],
 
   exports: [

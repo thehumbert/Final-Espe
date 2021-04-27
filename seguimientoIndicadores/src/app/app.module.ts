@@ -14,11 +14,12 @@ import { PipesModule } from './pipes/pipes.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ChartsModule } from 'ng2-charts';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    NopagefoundComponent,
-    
+    NopagefoundComponent
+
   ],
   imports: [
     BrowserModule,
