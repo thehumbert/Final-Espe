@@ -60,6 +60,7 @@ app.use( '/api/viceInvestigacion', require('./routes/viceInvestigacions') );
 app.use( '/api/viceDocencia', require('./routes/viceDocencias') );
 app.use( '/api/viceAdministrativo', require('./routes/viceAdministrativos') );
 app.use( '/api/gastoCorriente', require('./routes/gastoCorrientes') );
+app.use( '/api/gastoInversion', require('./routes/gastoInversions') );
 
 app.use('/api/upload',uploadRoutes);
 app.use('/api', userRoutesdocumentos)

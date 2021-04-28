@@ -30,12 +30,12 @@
     <div class="row mt-2" *ngIf="asignado.length > 0">
       <div class="col-md-12">
         <div class="row m-2">
-          <table class="table">
+          <table class="table" [formGroup]="gastoInversionForm">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col" class="text-center">ORGANISMO</th>
-                <th scope="col" class="text-center">EXTENCION</th>
+                <th scope="col" class="text-center">EXTENCIÓN</th>
                 <th scope="col" class="text-center">NOMBRE DEL PROYECTO</th>
                 <th scope="col" class="text-center">NOMBRE DE LA ACTIVIDAD</th>
                 <th scope="col" class="text-center">PARTIDA</th>
@@ -49,12 +49,12 @@
                 <th scope="col" class="text-center">SALDO POR COMPROMETER</th>
                 <th scope="col" class="text-center">SALDO POR DEVENGAR</th>
                 <th scope="col" class="text-center">SALDO POR PAGAR</th>
-                <th scope="col" class="text-center">% EJECUCION</th>
+                <th scope="col" class="text-center">% EJECUCIÓN</th>
                 <th scope="col" class="text-center">CORRELATIVO</th>
                 <th scope="col" class="text-center">EOD</th>
                 <th scope="col" class="text-center">CUP</th>
-                <th scope="col" class="text-center">CODIGO ESTRUCTURA PRESUPUESTARIA</th>
-                <th scope="col" class="text-center">CODIGO ITEM</th>
+                <th scope="col" class="text-center">CÓDIGO ESTRUCTURA PRESUPUESTARIA</th>
+                <th scope="col" class="text-center">CÓDIGO ITEM</th>
               </tr>
             </thead>
             <tbody>
@@ -66,11 +66,11 @@
                 <td class="text-center" style="font-size: x-small; ">{{ item.NDP}}</td>
                 <td class="text-center" style="font-size: x-small; ">{{ item.NDLA}}</td>
                 <td class="text-center" style="font-size: x-small; ">{{ item.Partida}}</td>
-                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;"class="form-control" [value] = 'item.Asignado' type="text"></td>
-                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;"class="form-control" [value] = 'item.Modificado' type="text"></td>
-                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Vigente' type="text"></td>
-                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Certificado' type="text"></td>
-                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Comprometido' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;"class="form-control" [value] = 'item.Asignado' type="number" ></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;"class="form-control" [value] = 'item.Modificado' type="number"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Vigente' type="number"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Certificado' type="number"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Comprometido' type="number"></td>
                 <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Devengado' type="text"></td>
                 <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.Pagado' type="text"></td>
                 <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.SaldoPorComprometer' type="text"></td>
@@ -82,6 +82,8 @@
                 <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.CUP' type="text"></td>
                 <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.CodigoEstructuraPresupuestaria' type="text"></td>
                 <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.CodigoItem' type="text"></td>
+                <td class="text-center" *ngIf="i<asignado.length-1"><input style="width: 100px;" class="form-control"   [value] = 'item.CodigoItem' type="text"></td>
+
                 <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Asignado}}</td>
                 <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Modificado}}</td>
                 <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Vigente}}</td>
@@ -98,18 +100,29 @@
                 <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].CUP}}</td>
                 <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].CodigoEstructuraPresupuestaria}}</td>
                 <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].CodigoItem}}</td>
+                <td scope="col" style="width: 100px;"*ngIf="asignado.length-1==i" class="bg-secondary text-white">{{asignado[asignado.length-1].Asignado}}</td>
                 <td class="text-center"></td>
+              </tr>
+
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><h2>Results</h2></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
               </tr>
             </tbody>
           </table>
           <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
 
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Guardar</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="createGastoInversion()">Guardar</button>
 
       </div>
       
       <div>
-  <div>
-  
-  </div>
